@@ -34,6 +34,7 @@ With some other existing technologies, you solve it using message queue(like SQS
 ```shell
 wget https://raw.githubusercontent.com/xdblab/xdb/main/docker-compose/docker-compose-postgres14-example.yaml && docker compose -f docker-compose-postgres14-example.yaml up -d
 ```
+It will include a PostgresSQL database and some [sample tables](https://github.com/xdblab/xdb/blob/main/extensions/postgres/schema/sample_tables.sql)
 
 2. Start the example:
 ```shell
