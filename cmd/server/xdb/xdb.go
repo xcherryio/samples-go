@@ -3,7 +3,7 @@ package xdb
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"github.com/xdblab/xdb-apis/goapi/xdbapi"
 	"github.com/xdblab/xdb-golang-samples/processes"
 	"github.com/xdblab/xdb-golang-sdk/xdb"
@@ -14,23 +14,16 @@ import (
 
 // BuildCLI is the main entry point for the iwf server
 func BuildCLI() *cli.App {
-	app := cli.NewApp()
-	app.Name = "xdb golang samples"
-	app.Usage = "xdb golang samples"
-	app.Version = "beta"
 
-	app.Commands = []cli.Command{
-		{
-			Name:    "start",
-			Aliases: []string{""},
-			Usage:   "start xdb golang samples",
-			Action:  start,
-		},
+	return &cli.App{
+		Name:    "xdb golang samples",
+		Usage:   "xdb golang samples",
+		Version: "beta",
+		Action:  start,
 	}
-	return app
 }
 
-func start(c *cli.Context) {
+func start(c *cli.Context) error {
 	fmt.Println("start running samples")
 	closeFn := startWorkflowWorker()
 	// TODO improve the waiting with process signal
@@ -38,6 +31,7 @@ func start(c *cli.Context) {
 	wg.Add(1)
 	wg.Wait()
 	closeFn()
+	return nil
 }
 
 var client = xdb.NewClient(processes.GetRegistry(), nil)

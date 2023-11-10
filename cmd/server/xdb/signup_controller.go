@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/google/uuid"
 	"github.com/xdblab/xdb-apis/goapi/xdbapi"
 	"github.com/xdblab/xdb-golang-samples/processes/signup"
 	"github.com/xdblab/xdb-golang-sdk/xdb"
@@ -54,9 +53,8 @@ func signupProcessStart(c *gin.Context) {
 func signupProcessVerifyEmail(c *gin.Context) {
 	userId := c.Query("userId")
 	if userId != "" {
-		dedupId := uuid.NewMD5(uuid.NameSpaceURL, []byte(userId)).String()
 		err := client.PublishToLocalQueue(
-			context.Background(), userId, signup.VerifyQueue, nil, dedupId)
+			context.Background(), userId, signup.VerifyQueue, nil, nil)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, err.Error())
 		} else {

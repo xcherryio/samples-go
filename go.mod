@@ -4,11 +4,9 @@ go 1.21.1
 
 require (
 	github.com/gin-gonic/gin v1.9.1
-	//github.com/xdblab/xdb-golang-sdk v0.0.0-20230823193018-004dcd28e302
-	github.com/google/uuid v1.3.0
-	github.com/urfave/cli v1.22.14
-	github.com/xdblab/xdb-apis v0.0.2-0.20231103162847-5f8bbf8de28c
-	github.com/xdblab/xdb-golang-sdk v0.0.0-20231106053605-526ac8f8e979
+	github.com/urfave/cli/v2 v2.25.7
+	github.com/xdblab/xdb-apis v0.0.2-0.20231109205241-83a802654b63
+	github.com/xdblab/xdb-golang-sdk v0.0.0-20231109205703-5651879e036e
 )
 
 require (
@@ -21,6 +19,7 @@ require (
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.14.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
+	github.com/google/uuid v1.4.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.4 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
@@ -31,6 +30,7 @@ require (
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.11 // indirect
+	github.com/xrash/smetrics v0.0.0-20201216005158-039620a65673 // indirect
 	golang.org/x/arch v0.3.0 // indirect
 	golang.org/x/crypto v0.9.0 // indirect
 	golang.org/x/net v0.10.0 // indirect
